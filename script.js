@@ -1,4 +1,17 @@
 
+//Variables for Intro:
+var introBtn = document.createElement("button");
+var introHdr = document.createElement("h1");
+
+//Variables for page layout:
+var containerEl = document.getElementById("container"); 
+var mainEl = document.createElement("main");
+var timerEl = document.createElement("div");
+var scoreEl = document.createElement("div");
+
+
+//Variables for Questions:
+
 questArray = ["What is an if/else statement? ", "What is a for loop? "]
 //Question 1, C is true
 var a1 = {answer: "Iterates a specified number of times.", isRight: false};
@@ -10,22 +23,33 @@ var a2 = {answer: "Tells you what a loop is for", isRight: false};
 var b2 = {answer: "Iterates a specified number of times.", isRight: true};
 var c2 = {answer: "Determines if a specified conditional statement is true or false", isRight: false}
 var d2 = {answer: "Enhances processing speed", isRight: false};
-var question = document.getElementById("question"); 
-var questEl = document.createElement("textarea");
-var timerEl = document.createElement("div");
-const numChoices = 4;
+
+const numChoices = 4; // number of multiple choice answers
 var qNum = 0; // question number
+
+// 2-d object array for answer text and bools
+var ansArray = [[a1, b1, c1, d1], [a2, b2, c2, d2]]; 
+//Variables for timer:
 var totTime = 120;
-
-var ansArray = [[a1, b1, c1, d1], [a2, b2, c2, d2]];
-
-
-
+//Variables for score
+var score = 100; 
 
 
 
 //Function for introduction page
-function introPage(){
+function setup(){
+
+    introHdr.textContent = "QUIZ TIME!";
+    containerEl.appendChild(introHdr);
+
+    
+    mainEl.textContent = "This is a multiple choice quiz. You will have 5 mintues to complete the quiz.";
+    containerEl.appendChild(mainEl);
+
+    
+    introBtn.textContent = "Begin Quiz";
+    introBtn.value = true;
+    containerEl.appendChild(introBtn);
 
 }
 
@@ -35,13 +59,14 @@ function eventBtn(event){
     if(!event.target.matches("button")){
         return;
     }
-    console.log(event.target.value);
+   
     fillBtns();
     
     
 }
 
 function fillBtns(){
+    
 
     if(qNum<ansArray.length){
         
@@ -59,21 +84,26 @@ function fillBtns(){
 
             //Helper functions
             function initializeBtns(){
+                timer();
+                containerEl.removeChild(introBtn);
+                mainEl.textContent = questArray[qNum];
                 
-                questEl.textContent = questArray[qNum];
-                question.appendChild(questEl);
                 for(x = 0; x < numChoices; x++){
                     var aBtnEl = document.createElement("button");
                     aBtnEl.id = x; 
                     aBtnEl.textContent = ansArray[qNum][x].answer;
                     aBtnEl.value = ansArray[qNum][x].isRight;
-                    question.appendChild(aBtnEl); 
-                    console.log(ansArray[qNum][x].isRight);
+                    containerEl.appendChild(aBtnEl); 
+                    
                     }
+
+                scoreEl.textContent = score + "%";
+                containerEl.appendChild(scoreEl);
                 }
             function newQuestion(){
-                console.log(questArray[qNum])
-                questEl.textContent = questArray[qNum];
+                
+                mainEl.textContent = questArray[qNum];
+                scoreEl.textContent = score + "%";
                 
                 for(x = 0; x < numChoices; x++){
                     aBtnEl = document.getElementById(x);
@@ -91,7 +121,7 @@ function timer(){
     
     var interval = setInterval(function(){
 
-        document.body.children[0].appendChild(timerEl);
+        containerEl.insertBefore(timerEl, mainEl);
 
         
         totTime--;
@@ -116,13 +146,11 @@ function timer(){
 
     }, 1000); //TOGGLE TIME HERE MILLISECONDS
 }
-        
-timer();
-fillBtns();
 
+function score(){
 
-
-
-
-
-question.addEventListener("click", eventBtn)
+}
+ 
+// RUNNING CODE
+setup(); 
+containerEl.addEventListener("click", eventBtn);
