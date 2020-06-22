@@ -82,7 +82,7 @@ formEl.addEventListener("submit", function(event){
     //for list items
     var singleUser = document.createElement("li");
     singleUser.className = "nameEntered";
-    singleUser.textContent = userNameEl.value + " received a " + score.toFixed(1) +"%";
+    singleUser.textContent = userNameEl.value + " received a(n) " + score.toFixed(1) +"%";
     nameListEl.appendChild(singleUser);
 
     //For storage

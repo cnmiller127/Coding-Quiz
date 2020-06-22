@@ -62,7 +62,7 @@ var b7 = {answer: "Returns true when var values are equal regardless of var type
 var c7 = {answer: "Equals operator for algebraic expressions", isRight: false}
 var d7 = {answer: "Not equal to", isRight: false};
 // Question 8, B is true
-var a8 = {answer: "back-end development language", isRight: false};
+var a8 = {answer: "Back-end development language", isRight: false};
 var b8 = {answer: "CSS framework", isRight: true};
 var c8 = {answer: "Javascript library", isRight: false}
 var d8 = {answer: "HTML element tag library", isRight: false};
@@ -74,13 +74,14 @@ var d9 = {answer: "Breaks out of a for loop", isRight: false};
 
 const numChoices = 4; // number of multiple choice answers
 var qNum = 0; // question number
+var qRight = 0;
 
 // 2-d object array for answer text and bools
 var ansArray = [[a1, b1, c1, d1], [a2, b2, c2, d2], [a3, b3, c3, d3], [a4, b4, c4, d4], [a5, b5, c5, d5], [a6, b6, c6, d6], [a7, b7, c7, d7], [a8, b8, c8, d8], [a9, b9, c9, d9]]; 
 //Variables for timer:
 var totTime = 240;
 //Variables for score
-var score = 100; 
+var score = 0; 
 //Variables for passing info to other page
 var tookQuiz = true;
 
@@ -140,7 +141,7 @@ function beginQuiz(){
                     
         }
 
-    scoreEl.textContent = score.toFixed(1) + "%";
+    scoreEl.textContent = "Score " + score.toFixed(1) + "%";
     containerEl.appendChild(scoreEl);
     
 }
@@ -154,9 +155,15 @@ function ansBtn(event){
 
     // Takes 10 seconds off clock if wrong
     // Takes percentage off score if wrong
+    if(event.target.value === "true")
+    {
+        qRight++;
+        score = 100*(qRight/(qNum + 1));
+    }
     if(event.target.value === "false" && totTime >= 0 && Math.floor(score) > 0){
         totTime -= 10;
-        score = score - 100*(1/ansArray.length);
+        score = 100*(qRight/(qNum + 1));
+        // score = score - 100*(1/ansArray.length);
         if(score < 0){
             score = 0;
         }
