@@ -1,41 +1,164 @@
+/* Includes padding in box sizing */
+* {
+    box-sizing: border-box;
+  }
+  /* Responsive body and html containers */
+  body, html{
+    height: 100vh;
+    
+  }
 
-
-#container{
-    background-color: black;
+.container{
+    background-color: rgb(223, 217, 217);
+    height: 100vh;
    
 }
 
 h1{
+font-family: 'Fredoka One', cursive;
+letter-spacing: 5px;
 text-align: center;
-color:whitesmoke;
+color:black;
 }
 
 button{
     
+    display: block;
     background-color: lightgreen;
     color: black;
-    margin: 20px 20px 20px 20px;
+    margin: auto;
+    margin-bottom: 10px;
+    
 }
 
-#btnDiv{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 12px;
 
-}
 
 main{
     text-align: center;
-    color: lightgreen;
+    color: black;
 }
 
-#id{
-    display: inline-block;
-    height: 10%;
-    background-color: lightgray;
+#timer{
+    height: auto;
+    width: 20%;
+    margin: auto;
+    background-color: black;
     font-size: 20px;
-    color: red;
+    font-weight: bolder;
+    text-align: center;
+    color:white;
 }
 
-@media screen 
+#score{
+
+    align-self: center;
+    text-align: center;
+    background-color: black;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+
+}
+
+ol{
+    padding: 0 0 0 0;
+    list-style-position: inside;
+    text-align: center;
+}
+input{
+     width:10%;
+     margin: auto;   
+}
+
+/* Large */ 
+@media screen and (min-width: 960px){
+    #btnDiv{
+    
+        
+        width: 90%;
+        margin: auto;
+    
+    }
+
+    button{
+        font-size: 28px;
+    }
+
+    main{
+        font-size: 36px;
+    }
+
+    li{
+        font-size: 28px;;
+    }
+
+    
+ 
+   
+  } 
+  /* Medium*/
+  @media screen and (max-width: 960px){
+    #btnDiv{   
+        width: 90%;
+        margin: auto;
+    }
+
+    button{
+        font-size: 18px;
+    }
+
+    main{
+        font-size: 24px;
+    }
+    li{
+        font-size: 24px;;
+    }
+   
+    
+  }
+  
+/* sm */
+@media screen and (max-width: 720px){
+    
+    #btnDiv{
+    
+        
+        width: 95%;
+        margin: auto;
+    
+    }
+
+    button{
+        font-size: 14px;
+    }
+
+    main{
+        font-size: 22px;;
+    }
+    li{
+        font-size: 22px;;
+    }
+}
+
+  /* xs */
+  @media screen and (max-width: 540px){
+    #btnDiv{
+    
+        
+        width: 100%;
+        margin: auto;
+    
+    }
+
+    button{
+        font-size: 12px;
+    }
+
+    main{
+        font-size: 16px;;
+    }
+    li{
+        font-size: 16px;
+    }
+    
+  }

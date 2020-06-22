@@ -1,19 +1,22 @@
 //Variables for post quiz page
 var userNameEl = document.createElement("input");
+userNameEl.placeholder = "Initial here";
+var container2El = document.getElementById("container-2");
+var btnDiv2 = document.createElement("div");
 var nameListEl = document.createElement("ol");
 var formEl = document.createElement("form");
 formEl.id = "postForm";
+var backBtn = document.createElement("button");
+var clearBtn = document.createElement("button");
 var  user = userNameEl.value.trim();
-var userObj = {name: user, score: score}
-var userObjArray = [];
 var storedInfo = [];
 var score;
+var userObj = {name: user, score: score}
 var entered = false;
 
 
 function getScore(){
     score = JSON.parse(localStorage.getItem("recentScore"));
-    userObjArray = JSON.parse(localStorage.getItem("user"));
     entered = JSON.parse(localStorage.getItem("tookQuiz"));
 }
 function postQuiz(){
@@ -26,11 +29,19 @@ function postQuiz(){
     }
 
     storedInfo = JSON.parse(localStorage.getItem("user"));
+    if(storedInfo === null){
+        storedInfo = [];
+    }
     
     if(storedInfo.length > 0)
     {
         writeList();
     }
+    container2El.appendChild(btnDiv2);
+    backBtn.textContent = "Re-take quiz";
+    clearBtn.textContent = "Clear list";
+    btnDiv2.appendChild(backBtn);
+    btnDiv2.appendChild(clearBtn);
            
 }
 
@@ -54,7 +65,6 @@ postQuiz();
 
 formEl.addEventListener("submit", function(event){
     event.preventDefault();
-    formEl.removeChild(userNameEl);
 
     //for list items
     var singleUser = document.createElement("li");
@@ -68,8 +78,23 @@ formEl.addEventListener("submit", function(event){
     user = userNameEl.value.trim();
     
     userObj = {name: user, score: score}
-    userObjArray.push(userObj)
-    console.log(userObjArray);
-    localStorage.setItem("user", JSON.stringify(userObjArray));
+    console.log(userObj);
+    storedInfo.push(userObj)
+    console.log(storedInfo);
+    localStorage.setItem("user", JSON.stringify(storedInfo));
+    formEl.removeChild(userNameEl);
+    
 
 });
+
+
+backBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    window.location.href = "./index.html";
+})
+
+clearBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    localStorage.clear();
+    nameListEl.innerHTML = "";
+})

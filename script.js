@@ -103,11 +103,14 @@ function setup(){
 
 function introBtn(event){
     event.stopPropagation();
+    timerEl.textContent = "Good Luck"; 
+    containerEl.insertBefore(timerEl, mainEl);
     beginQuiz();
    
 }
 
 function beginQuiz(){
+    
     timer();
     btnDiv.removeChild(introBtnEl);
     mainEl.textContent = questArray[qNum];
@@ -138,7 +141,7 @@ function ansBtn(event){
     if(event.target.value === "false" && totTime >= 0 && score > 0){
         totTime -= 10;
         score = score - 100*(1/ansArray.length);
-        //console.log(score);
+        console.log(score);
 
     }
     nextInQuiz();
@@ -149,7 +152,7 @@ function ansBtn(event){
 function nextInQuiz(){
     
     qNum++;
-    scoreEl.textContent = score.toFixed(1) + "%";
+    scoreEl.textContent = "Score: " + score.toFixed(1) + "%";
     if(qNum < ansArray.length){
         
         
@@ -173,23 +176,23 @@ function timer(){
     
     var interval = setInterval(function(){
 
-        containerEl.insertBefore(timerEl, mainEl);
+        
         totTime--;
         var tMin = Math.floor(totTime/60);
         var tSec = totTime % 60;
         
        if(totTime > 0 && qNum < ansArray.length){
            if(tSec >= 10){
-            timerEl.textContent = tMin + ":" + tSec;
+            timerEl.textContent = "Time: " + tMin + ":" + tSec;
            }
            else{
-            timerEl.textContent = tMin + ":0" + tSec;
+            timerEl.textContent = "Time: " + tMin + ":0" + tSec;
            }
 
        }
        else{
         clearInterval(interval);
-        timerEl.textContent = "0:00";
+        timerEl.textContent = "Time: 0:00";
         localStorage.setItem("tookQuiz", JSON.stringify(true));
         saveScore();
         window.location.href = "./scoresheet.html";
@@ -202,6 +205,7 @@ function timer(){
 //Save score
 function saveScore(){
     localStorage.setItem("recentScore", JSON.stringify(score));
+    console.log(score);
 
 }
 
