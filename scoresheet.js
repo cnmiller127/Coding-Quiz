@@ -1,31 +1,43 @@
-//Variables for post quiz page
-var userNameEl = document.createElement("input");
-userNameEl.placeholder = "Initial here";
+//Variables for layout
 var container2El = document.getElementById("container-2");
-var btnDiv2 = document.createElement("div");
-var nameListEl = document.createElement("ol");
-var formEl = document.createElement("form");
-formEl.id = "postForm";
-var backBtn = document.createElement("button");
-var clearBtn = document.createElement("button");
+    var formEl = document.createElement("form");
+    formEl.id = "postForm";
+        var nameListEl = document.createElement("ol");
+        nameListEl.className = "nameList"
+        var scoreEl = document.createElement("div");
+        scoreEl.id = "pre-initials"
+        var userNameEl = document.createElement("input");
+        userNameEl.placeholder = "Initial here";
+        userNameEl.id = "initials"
+    var btnDiv2 = document.createElement("div");
+        var backBtn = document.createElement("button");
+        backBtn.className = "btn";
+        var clearBtn = document.createElement("button");
+        clearBtn.className = "btn";
+//Variables for list and storage
 var  user = userNameEl.value.trim();
 var storedInfo = [];
 var score;
 var userObj = {name: user, score: score}
 var entered = false;
 
+ 
+
 
 function getScore(){
     score = JSON.parse(localStorage.getItem("recentScore"));
     entered = JSON.parse(localStorage.getItem("tookQuiz"));
+    scoreEl.textContent = "YOUR SCORE: " + score.toFixed(1) + "%";
 }
 function postQuiz(){
 
     cont2El = document.getElementById("container-2")
     cont2El.appendChild(formEl);
     formEl.appendChild(nameListEl);
+    
     if(score !== null && entered === true){
-     formEl.appendChild(userNameEl);
+        formEl.appendChild(scoreEl);
+        formEl.appendChild(userNameEl);
     }
 
     storedInfo = JSON.parse(localStorage.getItem("user"));
@@ -51,6 +63,7 @@ function writeList(){
     for(var t = 0; t < storedInfo.length; t++)
         {
             var newEntry = document.createElement("li");
+            newEntry.className = "nameEntered";
             var nm = storedInfo[t].name;
             var scr = storedInfo[t].score;
             newEntry.textContent = nm + " received a " + scr.toFixed(1) +"%";
@@ -65,9 +78,10 @@ postQuiz();
 
 formEl.addEventListener("submit", function(event){
     event.preventDefault();
-
+    scoreEl.remove();
     //for list items
     var singleUser = document.createElement("li");
+    singleUser.className = "nameEntered";
     singleUser.textContent = userNameEl.value + " received a " + score.toFixed(1) +"%";
     nameListEl.appendChild(singleUser);
 

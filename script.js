@@ -1,7 +1,11 @@
 
 //Variables for Intro:
 var introBtnEl = document.createElement("button");
+introBtnEl.className = "btn"; 
 var introHdr = document.createElement("h1");
+introHdr.className = "hdr";
+var introList = document.createElement("ol")
+introList.className = "nameList";
 
 //Variables for page layout:
 var containerEl = document.getElementById("container");
@@ -9,6 +13,7 @@ var btnDiv = document.createElement("div");
 btnDiv.id = "btnDiv";
 var mainEl = document.createElement("main");
 mainEl.id = "main";
+mainEl.className = "main";
 var timerEl = document.createElement("div");
 timerEl.id = "timer";
 var scoreEl = document.createElement("div");
@@ -18,65 +23,62 @@ scoreEl.id = "score";
 
 //Variables for Questions:
 
-questArray = ["What is an if/else statement? ", "What is a for loop? ", "What is CSS used for? "]
+questArray = ["1.) What is an if statement? ", "2.) What is a for loop? ", "3.) What is CSS used for?"
+, "4.) What values can bool have?", "5.) What does floating an image help with?", "6.) What is the '%' operator?"
+, "7.) What does == do in Javascript?", "8.) What is bootstrap", "9.) What does stopPropogation() do?" ]
 //Question 1, C is true
 var a1 = {answer: "Iterates a specified number of times.", isRight: false};
 var b1 = {answer: "Prompts the user to answer a question.", isRight: false};
-var c1 = {answer: "Determines if a specified conditional statement is true or false", isRight: true}
+var c1 = {answer: "Body runs if a specified conditional statement is true or false", isRight: true}
 var d1 = {answer: "Enhances processing speed", isRight: false};
 // Question 2, B is true
 var a2 = {answer: "Tells you what a loop is for", isRight: false};
 var b2 = {answer: "Iterates a specified number of times.", isRight: true};
-var c2 = {answer: "Determines if a specified conditional statement is true or false", isRight: false}
-var d2 = {answer: "Enhances processing speed", isRight: false};
+var c2 = {answer: "A user input interface", isRight: false}
+var d2 = {answer: "Only for timers", isRight: false};
 // Question 3, B is true
 var a3 = {answer: "The skeletal structure of the website", isRight: false};
 var b3 = {answer: "The logic and reasoning behind the website.", isRight: false};
 var c3 = {answer: "Computer screen syncronization", isRight: false}
 var d3 = {answer: "The styling and layout of the website", isRight: true};
-// // Question 4, B is true
-// var a4 = {answer: "Tells you what a loop is for", isRight: false};
-// var b4 = {answer: "Iterates a specified number of times.", isRight: true};
-// var c4 = {answer: "Determines if a specified conditional statement is true or false", isRight: false}
-// var d4 = {answer: "Enhances processing speed", isRight: false};
-// // Question 5, B is true
-// var a5 = {answer: "Tells you what a loop is for", isRight: false};
-// var b5 = {answer: "Iterates a specified number of times.", isRight: true};
-// var c5 = {answer: "Determines if a specified conditional statement is true or false", isRight: false}
-// var d5 = {answer: "Enhances processing speed", isRight: false};
-// // Question 6, B is true
-// var a6 = {answer: "Tells you what a loop is for", isRight: false};
-// var b6 = {answer: "Iterates a specified number of times.", isRight: true};
-// var c6 = {answer: "Determines if a specified conditional statement is true or false", isRight: false}
-// var d6 = {answer: "Enhances processing speed", isRight: false};
-// // Question 7, B is true
-// var a7 = {answer: "Tells you what a loop is for", isRight: false};
-// var b7 = {answer: "Iterates a specified number of times.", isRight: true};
-// var c7 = {answer: "Determines if a specified conditional statement is true or false", isRight: false}
-// var d7 = {answer: "Enhances processing speed", isRight: false};
-// // Question 8, B is true
-// var a8 = {answer: "Tells you what a loop is for", isRight: false};
-// var b8 = {answer: "Iterates a specified number of times.", isRight: true};
-// var c8 = {answer: "Determines if a specified conditional statement is true or false", isRight: false}
-// var d8 = {answer: "Enhances processing speed", isRight: false};
-// // Question 9, B is true
-// var a9 = {answer: "Tells you what a loop is for", isRight: false};
-// var b9 = {answer: "Iterates a specified number of times.", isRight: true};
-// var c9 = {answer: "Determines if a specified conditional statement is true or false", isRight: false}
-// var d9 = {answer: "Enhances processing speed", isRight: false};
-// // Question 10, B is true
-// var a10 = {answer: "Tells you what a loop is for", isRight: false};
-// var b10 = {answer: "Iterates a specified number of times.", isRight: true};
-// var c10 = {answer: "Determines if a specified conditional statement is true or false", isRight: false}
-// var d10 = {answer: "Enhances processing speed", isRight: false};
+// Question 4, A is true
+var a4 = {answer: "True or False", isRight: true};
+var b4 = {answer: "Numbers", isRight: false};
+var c4 = {answer: "Characters", isRight: false}
+var d4 = {answer: "All of the above", isRight: false};
+// Question 5, D is true
+var a5 = {answer: "Changing the image filter", isRight: false};
+var b5 = {answer: "Enlarging and shrinking the image", isRight: false};
+var c5 = {answer: "Definition", isRight: false}
+var d5 = {answer: "Wrapping text", isRight: true};
+// Question 6, C is true
+var a6 = {answer: "Division operator", isRight: false};
+var b6 = {answer: "Returns a value as a percentage", isRight: false};
+var c6 = {answer: "Remainder operator", isRight: true}
+var d6 = {answer: "Recursive functions", isRight: false};
+// Question 7, B is true
+var a7 = {answer: "Returns true when var types and values are equal", isRight: false};
+var b7 = {answer: "Returns true when var values are same, regardless of var type", isRight: true};
+var c7 = {answer: "Equals operator for algebraic expressions", isRight: false}
+var d7 = {answer: "Not equal to", isRight: false};
+// Question 8, B is true
+var a8 = {answer: "back-end development language", isRight: false};
+var b8 = {answer: "CSS framework.", isRight: true};
+var c8 = {answer: "Javascript library", isRight: false}
+var d8 = {answer: "HTML element tag library", isRight: false};
+// Question 9, A is true
+var a9 = {answer: "Prevents event bubbling ", isRight: true};
+var b9 = {answer: "Enables event bubbling", isRight: false};
+var c9 = {answer: "Creates sin waves", isRight: false}
+var d9 = {answer: "Breaks out of a for loop", isRight: false};
 
 const numChoices = 4; // number of multiple choice answers
 var qNum = 0; // question number
 
 // 2-d object array for answer text and bools
-var ansArray = [[a1, b1, c1, d1], [a2, b2, c2, d2], [a3, b3, c3, d3]]; 
+var ansArray = [[a1, b1, c1, d1], [a2, b2, c2, d2], [a3, b3, c3, d3], [a4, b4, c4, d4], [a5, b5, c5, d5], [a6, b6, c6, d6], [a7, b7, c7, d7], [a8, b8, c8, d8], [a9, b9, c9, d9]]; 
 //Variables for timer:
-var totTime = 120;
+var totTime = 240;
 //Variables for score
 var score = 100; 
 //Variables for passing info to other page
@@ -89,10 +91,22 @@ function setup(){
 
     introHdr.textContent = "QUIZ TIME!";
     containerEl.appendChild(introHdr);
-
     
-    mainEl.textContent = "This is a multiple choice quiz. You will have 5 mintues to complete the quiz.";
     containerEl.appendChild(mainEl);
+    
+    mainEl.appendChild(introList);
+
+    var introListLi1 = document.createElement("li")
+    introListLi1.textContent = "Multiple choice quiz"
+    introList.appendChild(introListLi1);
+
+    var introListLi2 = document.createElement("li")
+    introListLi2.textContent = "Timed: 4 minutes"
+    introList.appendChild(introListLi2);
+
+    var introListLi3 = document.createElement("li")
+    introListLi3.textContent = "Lose 10 seconds per wrong answer"
+    introList.appendChild(introListLi3);
 
     containerEl.appendChild(btnDiv);
 
@@ -103,6 +117,7 @@ function setup(){
 
 function introBtn(event){
     event.stopPropagation();
+    mainEl.removeChild(introList);
     timerEl.textContent = "Good Luck"; 
     containerEl.insertBefore(timerEl, mainEl);
     beginQuiz();
@@ -118,6 +133,7 @@ function beginQuiz(){
     for(x = 0; x < numChoices; x++){
         var aBtnEl = document.createElement("button");
         aBtnEl.id = x; 
+        aBtnEl.className = "btn";
         aBtnEl.textContent = ansArray[qNum][x].answer;
         aBtnEl.value = ansArray[qNum][x].isRight;
         btnDiv.appendChild(aBtnEl); 
@@ -138,10 +154,12 @@ function ansBtn(event){
 
     // Takes 10 seconds off clock if wrong
     // Takes percentage off score if wrong
-    if(event.target.value === "false" && totTime >= 0 && score > 0){
+    if(event.target.value === "false" && totTime >= 0 && Math.floor(score) > 0){
         totTime -= 10;
         score = score - 100*(1/ansArray.length);
-        console.log(score);
+        if(score < 0){
+            score = 0;
+        }
 
     }
     nextInQuiz();

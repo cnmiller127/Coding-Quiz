@@ -14,28 +14,44 @@
    
 }
 
-h1{
+.hdr{
 font-family: 'Fredoka One', cursive;
 letter-spacing: 5px;
 text-align: center;
 color:black;
+margin-bottom: 2%;
 }
 
-button{
+.btn{
     
     display: block;
     background-color: lightgreen;
     color: black;
     margin: auto;
-    margin-bottom: 10px;
+    margin-bottom: 2%;
+    
     
 }
 
-
-
-main{
+.main{
     text-align: center;
     color: black;
+    margin: 2% 0 2% 0;
+    background-color: white;
+    font-weight: 900;
+    
+}
+
+.nameList{
+    padding: 0 0 0 0;
+    list-style-position: inside;
+    text-align: center;
+    font-style: italic;
+    font-weight: 900;
+    margin-bottom: 2%;;
+}
+.nameEntered{
+    margin-bottom: 0.5%;
 }
 
 #timer{
@@ -43,7 +59,6 @@ main{
     width: 20%;
     margin: auto;
     background-color: black;
-    font-size: 20px;
     font-weight: bolder;
     text-align: center;
     color:white;
@@ -54,111 +69,196 @@ main{
     align-self: center;
     text-align: center;
     background-color: black;
-    font-size: 20px;
     font-weight: bolder;
     color: white;
+    margin-top: 2%;;
 
 }
 
-ol{
-    padding: 0 0 0 0;
-    list-style-position: inside;
+#initials{
+    display: block;
+    width: 20%;
+    margin: auto;
+    margin-top: 0.5%;
+    margin-bottom: 2%;
+}
+#pre-initials{
+    margin-top: 4%;   
     text-align: center;
-}
-input{
-     width:10%;
-     margin: auto;   
+    font-weight: bold; 
 }
 
-/* Large */ 
-@media screen and (min-width: 960px){
-    #btnDiv{
-    
-        
-        width: 90%;
-        margin: auto;
-    
+/* XL */ 
+@media screen and (min-width: 1140px){
+    .hdr{
+        font-size: 50px;
     }
 
-    button{
+    .container{
         font-size: 28px;
     }
 
-    main{
-        font-size: 36px;
+    .btn{
+        font-size: 28px;
+    }
+    .main{
+        font-size: 34px;
+        
+    }
+    .nameList{
+        font-size: 34px;
+            
     }
 
-    li{
-        font-size: 28px;;
+    #initials{
+        font-size: 28px;
+
+    }
+    #pre-initials{
+        font-size: 28px;
+        
+    }
+       
+  } 
+
+/* Large */ 
+@media screen and (max-width: 1140px){
+    .hdr{
+        font-size: 50px;
     }
 
-    
- 
-   
+    .container{
+        font-size: 28px;
+    }
+
+    .btn{
+        font-size: 28px;
+    }
+    .main{
+        font-size: 34px;
+        
+    }
+    .nameList{
+        font-size: 34px;
+            
+    }
+
+    #initials{
+        font-size: 28px;
+
+    }
+    #pre-initials{
+        font-size: 28px;
+        
+    }
+       
   } 
   /* Medium*/
   @media screen and (max-width: 960px){
-    #btnDiv{   
-        width: 90%;
-        margin: auto;
+    .hdr{
+        font-size: 42px;
     }
 
-    button{
-        font-size: 18px;
+    .container{
+        font-size: 20px;
     }
 
-    main{
-        font-size: 24px;
+    .btn{
+        font-size: 20px;
+        margin-top: 3%;
+        margin-bottom: 3%;
     }
-    li{
-        font-size: 24px;;
+    .main{
+        font-size: 26px;
+        
     }
+    .nameList{
+        font-size: 26px;
+            
+    }
+
+    #initials{
+        font-size: 20px;
+
+    }
+    #pre-initials{
+        font-size: 20px;
+        
+    }  
+    
    
     
   }
   
 /* sm */
 @media screen and (max-width: 720px){
-    
-    #btnDiv{
-    
+    .hdr{
+        font-size: 36px;
+    }
+
+    .container{
+        font-size: 16px;
+    }
+
+    .btn{
+        font-size: 16px;
+        margin-top: 4%;
+        margin-bottom: 4%;
+    }
+    .main{
+        font-size: 22px;
         
-        width: 95%;
-        margin: auto;
+    }
+    .nameList{
+        font-size: 22px;
+            
+    }
+
+    #initials{
+        font-size: 16px;
+
+    }
+    #pre-initials{
+        font-size: 16px;
+        
+    } 
     
-    }
-
-    button{
-        font-size: 14px;
-    }
-
-    main{
-        font-size: 22px;;
-    }
-    li{
-        font-size: 22px;;
-    }
+    
 }
 
   /* xs */
   @media screen and (max-width: 540px){
-    #btnDiv{
-    
-        
-        width: 100%;
-        margin: auto;
-    
+    .hdr{
+        font-size: 28px;
     }
 
-    button{
+    .container{
         font-size: 12px;
     }
 
-    main{
-        font-size: 16px;;
+    .btn{
+        font-size: 12px;
+        margin-top: 5%;
+        margin-bottom: 5%;
     }
-    li{
-        font-size: 16px;
+    .main{
+        font-size: 18px;
+        
+        
     }
+    .nameList{
+        font-size: 18px;
+            
+    }
+
+    #initials{
+        font-size: 12px;
+
+    }
+    #pre-initials{
+        font-size: 12px;
+        
+    }
+    
     
   }
