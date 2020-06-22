@@ -66,7 +66,7 @@ function writeList(){
             newEntry.className = "nameEntered";
             var nm = storedInfo[t].name;
             var scr = storedInfo[t].score;
-            newEntry.textContent = nm + " received a " + scr.toFixed(1) +"%";
+            newEntry.textContent = nm + " received a(n) " + scr.toFixed(1) +"%";
             console.log(storedInfo[t].score)
             nameListEl.appendChild(newEntry); 
         }

@@ -27,47 +27,47 @@ questArray = ["1.) What is an if statement? ", "2.) What is a for loop? ", "3.) 
 , "4.) What values can bool have?", "5.) What does floating an image help with?", "6.) What is the '%' operator?"
 , "7.) What does == do in Javascript?", "8.) What is bootstrap", "9.) What does stopPropogation() do?" ]
 //Question 1, C is true
-var a1 = {answer: "Iterates a specified number of times.", isRight: false};
-var b1 = {answer: "Prompts the user to answer a question.", isRight: false};
-var c1 = {answer: "Body runs if a specified conditional statement is true or false", isRight: true}
+var a1 = {answer: "Iterates a specified number of times", isRight: false};
+var b1 = {answer: "Prompts the user to answer a question", isRight: false};
+var c1 = {answer: "Body runs if a specified conditional statement is met", isRight: true}
 var d1 = {answer: "Enhances processing speed", isRight: false};
 // Question 2, B is true
 var a2 = {answer: "Tells you what a loop is for", isRight: false};
-var b2 = {answer: "Iterates a specified number of times.", isRight: true};
+var b2 = {answer: "Iterates a specified number of times", isRight: true};
 var c2 = {answer: "A user input interface", isRight: false}
 var d2 = {answer: "Only for timers", isRight: false};
 // Question 3, B is true
 var a3 = {answer: "The skeletal structure of the website", isRight: false};
-var b3 = {answer: "The logic and reasoning behind the website.", isRight: false};
+var b3 = {answer: "The logic and reasoning behind the website", isRight: false};
 var c3 = {answer: "Computer screen syncronization", isRight: false}
 var d3 = {answer: "The styling and layout of the website", isRight: true};
 // Question 4, A is true
-var a4 = {answer: "True or False", isRight: true};
+var a4 = {answer: "True or false", isRight: true};
 var b4 = {answer: "Numbers", isRight: false};
 var c4 = {answer: "Characters", isRight: false}
 var d4 = {answer: "All of the above", isRight: false};
 // Question 5, D is true
 var a5 = {answer: "Changing the image filter", isRight: false};
 var b5 = {answer: "Enlarging and shrinking the image", isRight: false};
-var c5 = {answer: "Definition", isRight: false}
+var c5 = {answer: "Higher definition", isRight: false}
 var d5 = {answer: "Wrapping text", isRight: true};
 // Question 6, C is true
 var a6 = {answer: "Division operator", isRight: false};
 var b6 = {answer: "Returns a value as a percentage", isRight: false};
 var c6 = {answer: "Remainder operator", isRight: true}
-var d6 = {answer: "Recursive functions", isRight: false};
+var d6 = {answer: "Recursive function marker", isRight: false};
 // Question 7, B is true
-var a7 = {answer: "Returns true when var types and values are equal", isRight: false};
-var b7 = {answer: "Returns true when var values are same, regardless of var type", isRight: true};
+var a7 = {answer: "Returns true only when both var types AND values are equal", isRight: false};
+var b7 = {answer: "Returns true when var values are equal regardless of var type", isRight: true};
 var c7 = {answer: "Equals operator for algebraic expressions", isRight: false}
 var d7 = {answer: "Not equal to", isRight: false};
 // Question 8, B is true
 var a8 = {answer: "back-end development language", isRight: false};
-var b8 = {answer: "CSS framework.", isRight: true};
+var b8 = {answer: "CSS framework", isRight: true};
 var c8 = {answer: "Javascript library", isRight: false}
 var d8 = {answer: "HTML element tag library", isRight: false};
 // Question 9, A is true
-var a9 = {answer: "Prevents event bubbling ", isRight: true};
+var a9 = {answer: "Prevents event bubbling", isRight: true};
 var b9 = {answer: "Enables event bubbling", isRight: false};
 var c9 = {answer: "Creates sin waves", isRight: false}
 var d9 = {answer: "Breaks out of a for loop", isRight: false};
