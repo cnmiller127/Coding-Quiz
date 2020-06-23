@@ -1,4 +1,3 @@
-
 //Variables for Intro:
 var introBtnEl = document.createElement("button");
 introBtnEl.className = "btn"; 
@@ -79,7 +78,7 @@ var qRight = 0;
 // 2-d object array for answer text and bools
 var ansArray = [[a1, b1, c1, d1], [a2, b2, c2, d2], [a3, b3, c3, d3], [a4, b4, c4, d4], [a5, b5, c5, d5], [a6, b6, c6, d6], [a7, b7, c7, d7], [a8, b8, c8, d8], [a9, b9, c9, d9]]; 
 //Variables for timer:
-var totTime = 240;
+var totTime = 60 //240;
 //Variables for score
 var score = 0; 
 //Variables for passing info to other page
@@ -169,9 +168,8 @@ function ansBtn(event){
     }
 
     if(totTime < 0 || qNum ===  ansArray.length - 1){
-        localStorage.setItem("tookQuiz", JSON.stringify(true));
+        
         saveScore();
-        window.location.href = "./scoresheet.html";
     }
     nextInQuiz();
     
@@ -222,12 +220,9 @@ function timer(){
        }
        else{
         clearInterval(interval);
-        score = 100*qRight/(ansArray.length);
-        //console.log(score);
         timerEl.textContent = "TIME: 0:00";
-        localStorage.setItem("tookQuiz", JSON.stringify(true));
         saveScore();
-        window.location.href = "./scoresheet.html";
+        
 
        }
 
@@ -236,7 +231,10 @@ function timer(){
 
 //Save score
 function saveScore(){
+    localStorage.setItem("tookQuiz", JSON.stringify(true));
+    score = 100 * (qRight/(ansArray.length));
     localStorage.setItem("recentScore", JSON.stringify(score));
+    window.location.href = "./scoresheet.html";
     //console.log(score);
 
 }
