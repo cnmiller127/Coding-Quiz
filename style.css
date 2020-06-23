@@ -12,11 +12,11 @@
 
 .container{
     background-color: rgb(223, 217, 217);
-    height: 98vh;
+    height: 95vh;
+    width: 90vw;
+    margin: auto;
+    margin-top:  2.5vh;
     
-    margin: 0 auto;
-    margin-top: 1.5vh;
-    width: 92%;
  
 }
 
