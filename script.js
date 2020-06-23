@@ -169,6 +169,8 @@ function ansBtn(event){
     }
 
     if(totTime < 0 || qNum ===  ansArray.length - 1){
+        localStorage.setItem("tookQuiz", JSON.stringify(true));
+        saveScore();
         window.location.href = "./scoresheet.html";
     }
     nextInQuiz();
