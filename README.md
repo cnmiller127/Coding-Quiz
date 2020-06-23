@@ -22,5 +22,4 @@
 
 ## Preview
 
-![](Assets/quizSS.PNG)
-
+![](Assets/QuizSS.PNG)
