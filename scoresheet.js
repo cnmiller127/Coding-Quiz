@@ -15,10 +15,8 @@ var container2El = document.getElementById("container-2");
         var clearBtn = document.createElement("button");
         clearBtn.className = "btn";
 //Variables for list and storage
-var  user = userNameEl.value.trim();
 var storedInfo = [];
 var score;
-var userObj = {name: user, score: score}
 var entered = false;
 
 
@@ -88,9 +86,9 @@ formEl.addEventListener("submit", function(event){
     entered = false;
     localStorage.setItem("tookQuiz", JSON.stringify(entered));
 
-    user = userNameEl.value.trim();
+    var user = userNameEl.value.trim();
     
-    userObj = {name: user, score: score}
+    var userObj = {name: user, score: score}
     console.log(userObj);
     storedInfo.push(userObj)
     console.log(storedInfo);
@@ -109,5 +107,6 @@ backBtn.addEventListener("click", function(event){
 clearBtn.addEventListener("click", function(event){
     event.preventDefault();
     localStorage.removeItem("user");
+    storedInfo = [];
     nameListEl.innerHTML = "";
 })
