@@ -217,6 +217,8 @@ function timer(){
        }
        else{
         clearInterval(interval);
+        score = 100*qRight/(ansArray.length);
+        //console.log(score);
         timerEl.textContent = "TIME: 0:00";
         localStorage.setItem("tookQuiz", JSON.stringify(true));
         saveScore();
@@ -230,7 +232,7 @@ function timer(){
 //Save score
 function saveScore(){
     localStorage.setItem("recentScore", JSON.stringify(score));
-    console.log(score);
+    //console.log(score);
 
 }
 
