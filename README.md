@@ -22,5 +22,5 @@
 
 ## Preview
 
-![Image](Assets/quizSS.png)
+![Image](assets/quizss.png)
 
