@@ -163,12 +163,13 @@ function ansBtn(event){
         qRight++;
         score = 100*(qRight/(qNum + 1));
     }
-    if(event.target.value === "false" && totTime > 0){
+    if((event.target.value === "false") && (totTime > 0)){
         totTime -= 10;
         score = 100*(qRight/(qNum + 1));
-        if(totTime < 0){
-            window.location.href = "./scoresheet.html";
-        }
+    }
+
+    if(totTime < 0 || qNum ===  ansArray.length - 1){
+        window.location.href = "./scoresheet.html";
     }
     nextInQuiz();
     
