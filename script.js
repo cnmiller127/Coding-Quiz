@@ -78,7 +78,7 @@ var qRight = 0;
 // 2-d object array for answer text and bools
 var ansArray = [[a1, b1, c1, d1], [a2, b2, c2, d2], [a3, b3, c3, d3], [a4, b4, c4, d4], [a5, b5, c5, d5], [a6, b6, c6, d6], [a7, b7, c7, d7], [a8, b8, c8, d8], [a9, b9, c9, d9]]; 
 //Variables for timer:
-var totTime = 60 //240;
+var totTime = 240;
 //Variables for score
 var score = 0; 
 //Variables for passing info to other page
@@ -167,7 +167,7 @@ function ansBtn(event){
         score = 100*(qRight/(qNum + 1));
     }
 
-    if(totTime < 0 || qNum ===  ansArray.length - 1){
+    if(totTime < 0 || qNum ===  ansArray.length){
         
         saveScore();
     }
