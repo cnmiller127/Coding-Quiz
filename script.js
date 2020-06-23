@@ -166,11 +166,9 @@ function ansBtn(event){
     if(event.target.value === "false" && totTime >= 0){
         totTime -= 10;
         score = 100*(qRight/(qNum + 1));
-        // score = score - 100*(1/ansArray.length);
-        if(score < 0){
-            score = 0;
+        if(totTime < 0){
+            totTime = 0;
         }
-
     }
     nextInQuiz();
     
