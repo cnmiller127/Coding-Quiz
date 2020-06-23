@@ -21,9 +21,8 @@ var score;
 var userObj = {name: user, score: score}
 var entered = false;
 
+
  
-
-
 function getScore(){
     score = JSON.parse(localStorage.getItem("recentScore"));
     entered = JSON.parse(localStorage.getItem("tookQuiz"));
@@ -109,6 +108,6 @@ backBtn.addEventListener("click", function(event){
 
 clearBtn.addEventListener("click", function(event){
     event.preventDefault();
-    localStorage.clear();
+    localStorage.removeItem("user");
     nameListEl.innerHTML = "";
 })
