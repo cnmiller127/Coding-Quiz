@@ -163,7 +163,7 @@ function ansBtn(event){
         qRight++;
         score = 100*(qRight/(qNum + 1));
     }
-    if(event.target.value === "false" && totTime >= 0 && Math.floor(score) > 0){
+    if(event.target.value === "false" && totTime >= 0){
         totTime -= 10;
         score = 100*(qRight/(qNum + 1));
         // score = score - 100*(1/ansArray.length);
