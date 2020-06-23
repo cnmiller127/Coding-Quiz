@@ -98,14 +98,17 @@ function setup(){
     mainEl.appendChild(introList);
 
     var introListLi1 = document.createElement("li")
+    introListLi1.className = "nameEntered";
     introListLi1.textContent = "Multiple choice quiz"
     introList.appendChild(introListLi1);
 
     var introListLi2 = document.createElement("li")
+    introListLi2.className = "nameEntered";
     introListLi2.textContent = "Timed: 4 minutes"
     introList.appendChild(introListLi2);
 
     var introListLi3 = document.createElement("li")
+    introListLi3.className = "nameEntered";
     introListLi3.textContent = "Lose 10 seconds per wrong answer"
     introList.appendChild(introListLi3);
 
