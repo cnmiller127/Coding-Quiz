@@ -1,6 +1,10 @@
 # QUIZ TIME
 
-![code quiz]https://cnmiller127.github.io/Coding-Quiz/
+## Link
+
+[code quiz]https://cnmiller127.github.io/Coding-Quiz/
+
+## Quiz Information
 
 - This is a multiple choice quiz on coding
 - 4 minutes to complete
@@ -16,7 +20,7 @@
 - Clear button provided to clear storage
 
 
-## Link to Quiz
+## Preview
 
-![github-small](Assets/quizSS.jpg)
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+![github-small](Assets/quizSS.PNG)
+
