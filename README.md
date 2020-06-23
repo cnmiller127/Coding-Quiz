@@ -22,4 +22,9 @@
 
 ## Preview
 
+<<<<<<< HEAD
 ![](Assets/QuizSS.PNG)
+=======
+![Image](assets/quizss.png)
+
+>>>>>>> 5d0ce2b76cf6de76bb4290e08461401754d45bcb
