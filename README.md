@@ -22,5 +22,5 @@
 
 ## Preview
 
-![](./Assets/quizSS.PNG)
+![](Assets/quizSS.PNG)
 
