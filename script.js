@@ -167,7 +167,7 @@ function ansBtn(event){
         score = 100*(qRight/(qNum + 1));
     }
 
-    if(totTime < 0 || qNum ===  ansArray.length){
+    if(totTime < 0 || qNum ===  ansArray.length - 1){
         
         saveScore();
     }
