@@ -167,7 +167,7 @@ function ansBtn(event){
         totTime -= 10;
         score = 100*(qRight/(qNum + 1));
         if(totTime < 0){
-            totTime = 0;
+            window.location.href = "./scoresheet.html";
         }
     }
     nextInQuiz();
