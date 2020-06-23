@@ -141,7 +141,7 @@ function beginQuiz(){
                     
         }
 
-    scoreEl.textContent = "Score " + score.toFixed(1) + "%";
+    scoreEl.textContent = "SCORE " + score.toFixed(1) + "%";
     containerEl.appendChild(scoreEl);
     
 }
@@ -177,7 +177,7 @@ function ansBtn(event){
 function nextInQuiz(){
     
     qNum++;
-    scoreEl.textContent = "Score: " + score.toFixed(1) + "%";
+    scoreEl.textContent = "SCORE: " + score.toFixed(1) + "%";
     if(qNum < ansArray.length){
         
         
@@ -208,16 +208,16 @@ function timer(){
         
        if(totTime > 0 && qNum < ansArray.length){
            if(tSec >= 10){
-            timerEl.textContent = "Time: " + tMin + ":" + tSec;
+            timerEl.textContent = "TIME: " + tMin + ":" + tSec;
            }
            else{
-            timerEl.textContent = "Time: " + tMin + ":0" + tSec;
+            timerEl.textContent = "TIME: " + tMin + ":0" + tSec;
            }
 
        }
        else{
         clearInterval(interval);
-        timerEl.textContent = "Time: 0:00";
+        timerEl.textContent = "TIME: 0:00";
         localStorage.setItem("tookQuiz", JSON.stringify(true));
         saveScore();
         window.location.href = "./scoresheet.html";
