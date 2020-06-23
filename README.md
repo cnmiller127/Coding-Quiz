@@ -22,6 +22,6 @@
 
 ## Preview
 
-![Image](thumb.png)
+![Image](Assets/thumb.png)
 
 
