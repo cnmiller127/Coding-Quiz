@@ -9,15 +9,15 @@ introList.className = "nameList";
 
 //Variables for page layout:
 var containerEl = document.getElementById("container");
-var btnDiv = document.createElement("div");
-btnDiv.id = "btnDiv";
-var mainEl = document.createElement("main");
-mainEl.id = "main";
-mainEl.className = "main";
-var timerEl = document.createElement("div");
-timerEl.id = "timer";
-var scoreEl = document.createElement("div");
-scoreEl.id = "score";
+    var timerEl = document.createElement("div");
+    timerEl.id = "timer";
+    var mainEl = document.createElement("main");
+    mainEl.id = "main";
+    mainEl.className = "main";
+    var btnDiv = document.createElement("div");
+    btnDiv.id = "btnDiv";
+    var scoreEl = document.createElement("div");
+    scoreEl.id = "score";
 
 
 
@@ -124,7 +124,7 @@ function introBtn(event){
     beginQuiz();
    
 }
-
+//Initiates timer and moves to first question
 function beginQuiz(){
     
     timer();
@@ -173,7 +173,7 @@ function ansBtn(event){
     
     
 }
-
+// Loads next segment of quiz
 function nextInQuiz(){
     
     qNum++;
@@ -196,6 +196,7 @@ function nextInQuiz(){
 }    
 
 //Timer
+// If timer triggers or all questions answered, will direct to score sheet page
 function timer(){
     
     
