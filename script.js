@@ -57,8 +57,8 @@ var b6 = {answer: "Returns a value as a percentage", isRight: false};
 var c6 = {answer: "Remainder operator", isRight: true}
 var d6 = {answer: "Recursive function marker", isRight: false};
 // Question 7, B is true
-var a7 = {answer: "Returns true only when both var types AND values are equal", isRight: false};
-var b7 = {answer: "Returns true when var values are equal regardless of var type", isRight: true};
+var a7 = {answer: "Equality comparison operator that returns true only when both variable types AND values are equal", isRight: false};
+var b7 = {answer: "Equality comparison operator that returns true when variable values are equal regardless of variable type", isRight: true};
 var c7 = {answer: "Equals operator for algebraic expressions", isRight: false}
 var d7 = {answer: "Not equal to", isRight: false};
 // Question 8, B is true

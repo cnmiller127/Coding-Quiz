@@ -16,6 +16,7 @@
     width: 90vw;
     margin: auto;
     margin-top:  2.5vh;
+    padding-top: 2vh;
     
  
 }
@@ -32,8 +33,8 @@ margin-bottom: 2%;
     
     display: block;
     background-color: lightgreen;
-    color: black;
     margin: auto;
+    color: black;
     margin-bottom: 2%;
     
     
