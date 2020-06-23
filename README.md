@@ -2,7 +2,7 @@
 
 ## Link
 
-[code quiz](https://cnmiller127.github.io/Coding-Quiz/)
+[Coding Quiz](https://cnmiller127.github.io/Coding-Quiz/)
 
 ## Quiz Information
 
@@ -22,5 +22,5 @@
 
 ## Preview
 
-![alt text](./Assets/quizSS.PNG)
+![](./Assets/quizSS.PNG)
 
