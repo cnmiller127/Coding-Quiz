@@ -59,13 +59,13 @@ function writeList(){
     storedInfo.sort(function(a, b){
         var scoreA = a.score;
         var scoreB = b.score;
-        let comparison = 0;
+        var comp = 0;
         if (scoreA > scoreB) {
-          comparison = -1;
+          comp = -1;
         } else if (scoreA < scoreB) {
-          comparison = 1;
+          comp = 1;
         }
-        return comparison;
+        return comp;
       })
 
     for(var t = 0; t < storedInfo.length; t++)
