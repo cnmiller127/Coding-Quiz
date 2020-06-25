@@ -55,8 +55,19 @@ function postQuiz(){
 }
 
 function writeList(){
-    
-    console.log(storedInfo.length);
+    nameListEl.innerHTML = ""; 
+    storedInfo.sort(function(a, b){
+        var scoreA = a.score;
+        var scoreB = b.score;
+        let comparison = 0;
+        if (scoreA > scoreB) {
+          comparison = -1;
+        } else if (scoreA < scoreB) {
+          comparison = 1;
+        }
+        return comparison;
+      })
+
     for(var t = 0; t < storedInfo.length; t++)
         {
             var newEntry = document.createElement("li");
@@ -65,8 +76,14 @@ function writeList(){
             var scr = storedInfo[t].score;
             newEntry.textContent = nm + " received a(n) " + scr.toFixed(1) +"%";
             console.log(storedInfo[t].score)
-            nameListEl.appendChild(newEntry); 
+            nameListEl.appendChild(newEntry);
         }
+     
+
+        
+   
+
+        
 
 }
 
@@ -76,12 +93,6 @@ postQuiz();
 formEl.addEventListener("submit", function(event){
     event.preventDefault();
     scoreEl.remove();
-    //for list items
-    var singleUser = document.createElement("li");
-    singleUser.className = "nameEntered";
-    singleUser.textContent = userNameEl.value + " received a(n) " + score.toFixed(1) +"%";
-    nameListEl.appendChild(singleUser);
-
     //For storage
     entered = false;
     localStorage.setItem("tookQuiz", JSON.stringify(entered));
@@ -94,6 +105,7 @@ formEl.addEventListener("submit", function(event){
     console.log(storedInfo);
     localStorage.setItem("user", JSON.stringify(storedInfo));
     formEl.removeChild(userNameEl);
+    writeList();
     
 
 });
